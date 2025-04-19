@@ -1,0 +1,76 @@
+.agendar-container {
+    min-height: 100vh;
+    background-color: #f9fbe7;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 20px;
+  }
+  
+  .agendar-header {
+    background-color: #81c784;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    position: relative;
+  }
+  
+  .volver-panel {
+    position: absolute;
+    left: 30px;
+    top: 25px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .volver-panel:hover {
+    text-decoration: underline;
+  }
+  
+  .agendar-main {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .agendar-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .agendar-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    color: #2e7d32;
+  }
+  
+  .agendar-form input,
+  .agendar-form select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+  }
+  
+  .agendar-form button {
+    background-color: #2e7d32;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .agendar-form button:hover {
+    background-color: #1b5e20;
+  }
+  

@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #e0f2f1;
+  }
+  
+  .registro-container {
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .registro-container h2 {
+    margin-bottom: 20px;
+    color: #2e7d32;
+  }
+  
+  .registro-form input {
+    display: block;
+    width: 94%;
+    margin: 10px 0;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  
+  .registro-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2e7d32;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .registro-form button:hover {
+    background-color: #1b5e20;
+  }
+  
+  .volver-login {
+    margin-top: 15px;
+    font-size: 14px;
+  }
+  
+  .volver-login a {
+    color: #2e7d32;
+    text-decoration: none;
+  }
+  
+  .volver-login a:hover {
+    text-decoration: underline;
+  }
+  
