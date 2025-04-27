@@ -1,3 +1,4 @@
+// Agendar.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/agendar.css';
@@ -11,11 +12,7 @@ export default function Agendar() {
 
   const handleConsultar = (e) => {
     e.preventDefault();
-
-    // Simulación aleatoria
     const disponible = Math.random() > 0.5;
-
-    // Enviar al componente de Disponibilidad con estado
     navigate('/disponibilidad', {
       state: {
         estado: disponible ? 'disponible' : 'no-disponible',
@@ -27,11 +24,17 @@ export default function Agendar() {
     });
   };
 
+  const handleAgendarOnline = () => {
+    navigate('/ReunionOnline'); 
+  };
+
   return (
     <div className="agendar-container">
+      {/* Botón Volver */}
+      <button className="volver-home-btn" onClick={() => navigate('/panel')}>← Volver al Panel</button>
+
       <header className="agendar-header">
         <h2>Agendar Nueva Reunión</h2>
-        <button className="volver-panel" onClick={() => navigate('/panel')}>← Volver al panel</button>
       </header>
 
       <main className="agendar-main">
@@ -77,6 +80,11 @@ export default function Agendar() {
           </label>
 
           <button type="submit" className="agendar-btn">Consultar disponibilidad</button>
+
+          <div className="agendar-online">
+            <h3>¿Prefieres una reunión Online?</h3>
+            <button className="online-btn" onClick={handleAgendarOnline}>Agendar Online</button>
+          </div>
         </form>
       </main>
     </div>

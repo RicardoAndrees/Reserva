@@ -5,6 +5,8 @@ import Registro from './pages/Registro';
 import PanelUsuario from './pages/PanelUsuario';
 import Agendar from './pages/Agendar'; 
 import Disponibilidad from './pages/Disponibilidad';
+import ReunionOnline from './pages/ReunionOnline';
+import MeetingInProgress from './pages/MeetingInProgress';
 
 const AppRouter = () => {
   return (
@@ -15,6 +17,8 @@ const AppRouter = () => {
         <Route path="/panel" element={<PanelUsuario />} />
         <Route path="/agendar" element={<Agendar />} />
         <Route path="/disponibilidad" element={<Disponibilidad />} />
+        <Route path="/reuniononline" element={<ReunionOnline />} />
+        <Route path="/meetinginprogress" element={<MeetingInProgress />} />
       </Routes>
     </BrowserRouter>
   );

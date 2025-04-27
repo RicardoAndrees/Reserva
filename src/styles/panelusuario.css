@@ -80,5 +80,32 @@ body {
     background-color: #2e7d32;
   }
 
+
+  .panel-card.online {
+    background-color: #e3f2fd;
+    border-left: 6px solid #2196f3;
+  }
+  
+  .panel-card.presencial {
+    background-color: #f1f8e9;
+    border-left: 6px solid #8bc34a;
+  }
+  
+  .unirme-btn {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .unirme-btn:disabled {
+    background-color: #90caf9;
+    cursor: not-allowed;
+  }
   
   

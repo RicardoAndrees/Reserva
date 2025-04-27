@@ -1,0 +1,80 @@
+.online-container {
+    min-height: 100vh;
+    background-color: #f9fbe7;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .online-container h2 {
+    background-color: #81c784;
+    padding: 20px 40px;
+    border-radius: 12px;
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  }
+  
+  .online-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .online-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    color: #2e7d32;
+  }
+  
+  .online-form input,
+  .online-form textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+    resize: vertical;
+  }
+  
+  .online-form button {
+    background-color: #2e7d32;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .online-form button:hover {
+    background-color: #1b5e20;
+  }
+  
+  .volver-home-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  
+  .volver-home-btn:hover {
+    background-color: #45a049;
+  }
+  
