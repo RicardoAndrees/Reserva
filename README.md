@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+Reserva de Salas (PMN)
+Esta es una aplicación web desarrollada con React cuyo propósito es permitir a los usuarios agendar reuniones en salas disponibles de forma sencilla y organizada.
+El proyecto incluye funcionalidades de registro, inicio de sesión, gestión de reservas, y soporte para reuniones online.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Tecnologías utilizadas
+React (Create React App)
 
-## Available Scripts
+React Router DOM (navegación entre páginas)
 
-In the project directory, you can run:
+CSS personalizado para los estilos
 
-### `npm start`
+Vercel para el despliegue final
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Funcionalidades principales
+1. Login
+Permite que los usuarios ingresen al sistema mediante sus credenciales.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Validación de campos para asegurar un inicio de sesión correcto.
 
-### `npm test`
+2. Registro
+Permite registrar un nuevo usuario en el sistema.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Campos como nombre, correo electrónico y contraseña deben ser completados correctamente.
 
-### `npm run build`
+3. Panel de Usuario
+Página principal después de iniciar sesión.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Desde aquí el usuario puede navegar hacia las opciones de agendar una reunión presencial o en línea.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Incluye botones de navegación clara para facilitar el movimiento dentro de la plataforma.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Agendar Salas
+Formulario para reservar una sala presencial.
 
-### `npm run eject`
+Permite seleccionar:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Título de la reunión
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Fecha
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Hora
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Sala (Sala A, Sala B, Sala C)
 
-## Learn More
+Botón para Consultar disponibilidad de la sala seleccionada.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Opción adicional para Agendar una reunión online.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. Agendar Online (ReunionOnline)
+Formulario simplificado para reservar una reunión online.
 
-### Code Splitting
+Redirige al usuario para completar la configuración de la reunión virtual.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+6. MeetingInProcess
+Página que simula una reunión en curso.
 
-### Analyzing the Bundle Size
+Pantalla que confirma que la reunión está activa, mejorando la experiencia de usuario.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Navegación entre páginas
+La navegación se implementa mediante botones bien ubicados, con opciones como:
 
-### Making a Progressive Web App
+Volver al panel desde cualquier subpágina.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Confirmar reunión o Cancelar y regresar.
 
-### Advanced Configuration
+Agendar online directamente si el usuario prefiere una opción virtual.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Este sistema de navegación asegura que el usuario siempre pueda volver fácilmente atrás o continuar su flujo de trabajo sin perderse.
