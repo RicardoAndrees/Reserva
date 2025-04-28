@@ -50,8 +50,4 @@ La navegación se implementa mediante **botones** bien ubicados, con opciones co
 
 Este sistema de navegación asegura que el usuario siempre pueda volver fácilmente atrás o continuar su flujo de trabajo sin perderse.
 
-## Instalación local
 
-1. Clona este repositorio:
-   ```bash
-   git clone https://github.com/tu-usuario/reserva-salas.git
