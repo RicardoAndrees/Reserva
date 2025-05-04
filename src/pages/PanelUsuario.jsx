@@ -1,9 +1,26 @@
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Importa useNavigate
+// PanelUsuario.js
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import '../styles/panelusuario.css';
 
 export default function PanelUsuario() {
-  const navigate = useNavigate(); // Define el hook navigate
+  const navigate = useNavigate();
+  const [reuniones, setReuniones] = useState([]);
+
+  useEffect(() => {
+    const reunionesGuardadas = JSON.parse(localStorage.getItem('reuniones')) || [];
+    setReuniones(reunionesGuardadas);
+  }, []);
+
+  const eliminarReunion = (index) => {
+    const confirmar = window.confirm("⚠️ ¿Estás seguro que deseas eliminar esta reunión?");
+    if (!confirmar) return;
+
+    const nuevasReuniones = [...reuniones];
+    nuevasReuniones.splice(index, 1);
+    setReuniones(nuevasReuniones);
+    localStorage.setItem('reuniones', JSON.stringify(nuevasReuniones));
+  };
 
   return (
     <div className="panel-container">
@@ -14,30 +31,19 @@ export default function PanelUsuario() {
 
       <div className="panel-content">
 
-        {/* Reunión Online Activa */}
-        <div className="panel-card online">
-          <h3>Reunión Online - Equipo de Desarrollo</h3>
-          <p>Fecha: Hoy</p>
-          <p>La reunión ha comenzado</p>
-          <button className="unirme-btn" onClick={() => navigate("/meetinginprogress")}>Unirme ahora</button>
-        </div>
+        {/* Mostrar reuniones dinámicas */}
+        {reuniones.map((reunion, index) => (
+          <div key={index} className="panel-card presencial">
+            <h3>Reunión - {reunion.titulo}</h3>
+            <p>Fecha: {reunion.fecha}</p>
+            <p>Hora: {reunion.hora}</p>
+            <p>Sala: {reunion.sala}</p>
 
-        {/* Reunión Online Futura */}
-        <div className="panel-card online">
-          <h3>Reunión Online - Revisión de Proyectos</h3>
-          <p>Fecha: Miércoles 30 de abril</p>
-          <p>Hora: 16:00</p>
-          <button className="unirme-btn" disabled>Unirme ahora</button>
-        </div>
-
-        {/* Reunión Presencial */}
-        <div className="panel-card presencial">
-          <h3>Reunión Presencial - Planificación Semanal</h3>
-          <p>Motivo: Coordinación de tareas semanales</p>
-          <p>Fecha: Viernes 26 de abril</p>
-          <p>Hora: 09:30</p>
-          <p>Sala: Sala B</p>
-        </div>
+            <button className="eliminar-btn" onClick={() => eliminarReunion(index)}>
+              🗑️ Eliminar
+            </button>
+          </div>
+        ))}
 
         {/* Botón para agendar nueva reunión */}
         <div className="panel-card">

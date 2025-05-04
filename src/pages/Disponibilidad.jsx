@@ -1,6 +1,7 @@
+// Disponibilidad.js
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import '../styles/disponibilidad.css';
 
 export default function Disponibilidad() {
@@ -17,13 +18,18 @@ export default function Disponibilidad() {
     );
   }
 
-  const { estado, titulo, fecha, hora, sala } = state;
+  const { estado, titulo, fecha, hora, sala, tipo } = state;
 
   const sugerencias = ["09:00", "10:00", "11:00", "12:00", "14:00", "15:00", "16:00", "17:00"];
   const horaActual = parseInt(hora?.split(':')[0]);
   const alternativas = sugerencias.filter(h => parseInt(h.split(':')[0]) > horaActual);
 
   const handleAgendar = () => {
+    const nuevaReunion = { titulo, fecha, hora, sala, tipo };
+    const reunionesPrevias = JSON.parse(localStorage.getItem('reuniones')) || [];
+    reunionesPrevias.push(nuevaReunion);
+    localStorage.setItem('reuniones', JSON.stringify(reunionesPrevias));
+
     setAgendado(true);
     setTimeout(() => {
       navigate('/panel');

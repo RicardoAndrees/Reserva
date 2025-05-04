@@ -13,6 +13,8 @@ export default function Agendar() {
   const handleConsultar = (e) => {
     e.preventDefault();
     const disponible = Math.random() > 0.5;
+
+    // Aquí solo navega a disponibilidad sin guardar aún
     navigate('/disponibilidad', {
       state: {
         estado: disponible ? 'disponible' : 'no-disponible',
@@ -20,6 +22,7 @@ export default function Agendar() {
         fecha,
         hora,
         sala,
+        tipo: 'presencial'
       }
     });
   };
@@ -30,7 +33,6 @@ export default function Agendar() {
 
   return (
     <div className="agendar-container">
-      {/* Botón Volver */}
       <button className="volver-home-btn" onClick={() => navigate('/panel')}>← Volver al Panel</button>
 
       <header className="agendar-header">
@@ -43,7 +45,6 @@ export default function Agendar() {
             Título de la reunión:
             <input
               type="text"
-              placeholder="Ej: Reunión de equipo"
               value={titulo}
               onChange={(e) => setTitulo(e.target.value)}
               required
@@ -83,7 +84,7 @@ export default function Agendar() {
 
           <div className="agendar-online">
             <h3>¿Prefieres una reunión Online?</h3>
-            <button className="online-btn" onClick={handleAgendarOnline}>Agendar Online</button>
+            <button className="online-btn" type="button" onClick={handleAgendarOnline}>Agendar Online</button>
           </div>
         </form>
       </main>
