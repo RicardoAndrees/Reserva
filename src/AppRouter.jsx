@@ -7,6 +7,7 @@ import Agendar from './pages/Agendar';
 import Disponibilidad from './pages/Disponibilidad';
 import ReunionOnline from './pages/ReunionOnline';
 import MeetingInProgress from './pages/MeetingInProgress';
+import ConfirmacionOnline from './pages/ConfirmacionOnline';
 
 const AppRouter = () => {
   return (
@@ -19,6 +20,7 @@ const AppRouter = () => {
         <Route path="/disponibilidad" element={<Disponibilidad />} />
         <Route path="/reuniononline" element={<ReunionOnline />} />
         <Route path="/meetinginprogress" element={<MeetingInProgress />} />
+        <Route path="/confirmacion-online" element={<ConfirmacionOnline />} />
       </Routes>
     </BrowserRouter>
   );

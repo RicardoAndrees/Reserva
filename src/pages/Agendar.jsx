@@ -9,12 +9,40 @@ export default function Agendar() {
   const [fecha, setFecha] = useState('');
   const [hora, setHora] = useState('');
   const [sala, setSala] = useState('Sala A');
+  const [error, setError] = useState('');
+
+  const validarFecha = (fecha) => {
+    const diaSemana = new Date(fecha + 'T00:00').getDay(); // Sunday = 0, Monday = 1, ...
+    return diaSemana !== 0; // No domingos
+  };
+
+  const validarHora = (hora) => {
+    const [hh, mm] = hora.split(':');
+    const horaInt = parseInt(hh, 10);
+    const minutoInt = parseInt(mm, 10);
+    return (
+      horaInt >= 9 &&
+      horaInt <= 19 &&
+      (minutoInt === 0 || minutoInt === 30)
+    );
+  };
 
   const handleConsultar = (e) => {
     e.preventDefault();
+
+    if (!validarFecha(fecha)) {
+      setError('No se puede agendar reuniones los domingos.');
+      return;
+    }
+
+    if (!validarHora(hora)) {
+      setError('La hora debe estar entre las 9:00 y las 19:00, en bloques de 30 minutos.');
+      return;
+    }
+
+    setError('');
     const disponible = Math.random() > 0.5;
 
-    // Aquí solo navega a disponibilidad sin guardar aún
     navigate('/disponibilidad', {
       state: {
         estado: disponible ? 'disponible' : 'no-disponible',
@@ -28,7 +56,7 @@ export default function Agendar() {
   };
 
   const handleAgendarOnline = () => {
-    navigate('/ReunionOnline'); 
+    navigate('/ReunionOnline');
   };
 
   return (
@@ -70,6 +98,8 @@ export default function Agendar() {
               required
             />
           </label>
+
+          {error && <div className="error">{error}</div>}
 
           <label>
             Sala:

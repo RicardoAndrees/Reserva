@@ -1,0 +1,54 @@
+.confirmacion-container {
+    min-height: 100vh;
+    background-color: #f9fbe7;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .confirmacion-container h2 {
+    background-color: #81c784;
+    padding: 20px 40px;
+    border-radius: 12px;
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .confirmacion-container p,
+  .confirmacion-container ul {
+    background-color: white;
+    padding: 15px 20px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    color: #2e7d32;
+    margin-bottom: 15px;
+    font-weight: 500;
+  }
+  
+  .confirmacion-container ul {
+    list-style-type: disc;
+    padding-left: 40px;
+  }
+  
+  .confirmacion-container button {
+    background-color: #2e7d32;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  .confirmacion-container button:hover {
+    background-color: #1b5e20;
+  }
+  
